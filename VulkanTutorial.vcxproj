@@ -71,12 +71,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)dependencies\Vulkan\Lib;$(ProjectDir)dependencies\GLFW\Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)dependencies\GLFW\Lib;$(ProjectDir)dependencies\Vulkan\Lib;$(ProjectDir)dependencies\Vulkan\Lib;$(ProjectDir)dependencies\GLFW\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)dependencies\Vulkan\Lib;$(ProjectDir)dependencies\GLFW\Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)dependencies\GLFW\Lib;$(ProjectDir)dependencies\Vulkan\Lib;$(ProjectDir)dependencies\Vulkan\Lib;$(ProjectDir)dependencies\GLFW\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)dependencies\GLFW\Lib;$(ProjectDir)dependencies\Vulkan\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)dependencies\GLFW\Include;$(ProjectDir)dependencies\Vulkan\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)dependencies\GLFW\Lib;$(ProjectDir)dependencies\Vulkan\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -88,6 +96,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>glfw3.lib;vulkan-1.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,6 +113,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>glfw3.lib;vulkan-1.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -119,6 +129,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>glfw3.lib;vulkan-1.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,6 +149,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>glfw3.lib;vulkan-1.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
